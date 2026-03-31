@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Udaya Shrestha | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#0f0f0f,#1a1a2e);
+    color:#fff;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    color:#00f5ff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00f5ff;
+}
+
+/* HERO SECTION */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:100px 8%;
+    flex-wrap:wrap;
+}
+
+.hero-text h1{
+    font-size:48px;
+}
+
+.hero-text span{
+    color:#00f5ff;
+}
+
+.hero-text p{
+    margin:20px 0;
+    color:#ccc;
+}
+
+.hero img{
+    width:280px;
+    border-radius:50%;
+    border:5px solid #00f5ff;
+    box-shadow:0 0 30px #00f5ff50;
+}
+
+/* BUTTON */
+.btn{
+    padding:12px 25px;
+    background:#00f5ff;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+    color:black;
+    transform:scale(1.05);
+}
+
+/* SECTION */
+section{
+    padding:80px 8%;
+}
+
+h2{
+    margin-bottom:40px;
+    font-size:32px;
+    border-left:5px solid #00f5ff;
+    padding-left:10px;
+}
+
+/* PROJECT CARDS */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:25px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px #00f5ff30;
+}
+
+/* FORM */
+form{
+    max-width:500px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,textarea{
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    background:#111;
+    color:white;
+}
+
+input:focus,textarea:focus{
+    outline:2px solid #00f5ff;
+}
+
+#formMessage{
+    font-size:14px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    margin-top:50px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo"><img src="logo.png"></div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Hi, I'm <span>Udaya Shrestha</span></h1>
+        <p> I am a passionate student who enjoys learning, building projects,
+        and exploring technology. I love solving problems and improving
+        my skills every day.</p>
+        <button class="btn">Download CV</button>
+    </div>
+
+    <!-- Replace with your own image -->
+    <img src="https://via.placeholder.com/300" alt="Profile Picture">
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I enjoy learning, coding, and creating meaningful projects.
+        My goal is to constantly improve and build things that matter.
+    </p>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="card">
+            <h3>Project One</h3>
+            <p>Short description of your amazing project.</p>
+        </div>
+
+        <div class="card">
+            <h3>Project Two</h3>
+            <p>Another cool thing you built.</p>
+        </div>
+
+        <div class="card">
+            <h3>Project Three</h3>
+            <p>Something impressive and technical.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+        <p id="formMessage"></p>
+    </form>
+</section>
+
+<footer>
+    © 2026 Udaya Shrestha | Designed with passion
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    const msg=document.getElementById("formMessage");
+    msg.style.color="#00f5ff";
+    msg.textContent="Message sent successfully!";
+    this.reset();
+});
+</script>
+
+</body>
+</html>
